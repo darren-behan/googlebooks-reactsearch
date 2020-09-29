@@ -32,7 +32,7 @@ function CardComponent() {
               </Row>
               <br></br>
               <Row className="buttonDiv ">
-                <Button className="saveBook btn btn-primary" id={book.id}>
+                <Button className="saveBook btn btn-primary" id={book.id} onClick={(e) => {context.handleSavedButton(e)}}>
                   Save Book
                 </Button>
                 <a href={book.volumeInfo.previewLink} target="_blank">

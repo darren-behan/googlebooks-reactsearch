@@ -1,39 +1,36 @@
-import React, { useState } from "react";
-import API from "../utils/API";
+import React, { useContext } from "react";
 import Jumbotron from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
 import { Card } from 'react-bootstrap';
-import BookCard from "../components/SearchCard"
+import SavedBookCard from "../components/SavedCard"
 import DataAreaContext from "../utils/DataAreaContext";
 
 function SavedBooks() {
+  const context = useContext(DataAreaContext);
+
   return (
-    <DataAreaContext.Provider
-      value={{}}
-    >
-      <Container fluid>
-        <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1>View your saved books</h1>
-            </Jumbotron>
-          </Col>
-          <Col size="12">
-            {/* {developerState.savedBooks.length > 0 ? 
-              ( <BookCard /> )
-              :  */}
-              <Card>
-                <Card.Body>
-                  <Card.Title className="d-flex justify-content-center">
-                    No saved books
-                  </Card.Title>
-                </Card.Body>
-              </Card>
-            {/* } */}
-          </Col>
-        </Row>
-      </Container>
-    </DataAreaContext.Provider>
+    <Container fluid>
+      <Row>
+        <Col size="md-12">
+          <Jumbotron>
+            <h1>View your saved books</h1>
+          </Jumbotron>
+        </Col>
+        <Col size="12">
+        {context.developerState.savedBooks.length > 0 ? 
+          ( <SavedBookCard /> )
+          :
+          <Card>
+            <Card.Body>
+              <Card.Title className="d-flex justify-content-center">
+                No saved books
+              </Card.Title>
+            </Card.Body>
+          </Card>
+        }
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
