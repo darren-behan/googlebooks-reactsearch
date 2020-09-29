@@ -8,11 +8,11 @@ function CardComponent() {
   const context = useContext(DataAreaContext);
 
   return (
-    <Card>
+    <Card style={{ borderRadius: "10px", backgroundColor: "#e9ecef" }}>
       <Card.Body>
         {context.developerState.books.map(book => {
-          return (
-            <li className="search-list list-group-item" key={book.id}>
+          return (  
+            <li style={{ borderRadius: "10px", marginBottom: "5px" }} className="list-group-item" key={book.id}>
               <Row className="SearchResult row" id={book.id}>
                 <Col size="2" className="bookImage">
                     <img src={book.volumeInfo.imageLinks.smallThumbnail} alt={book.volumeInfo.title} />

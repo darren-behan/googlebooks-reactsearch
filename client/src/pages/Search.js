@@ -4,16 +4,17 @@ import Jumbotron from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn } from "../components/Form";
 import { Card } from 'react-bootstrap';
-import BookCard from "../components/Cards"
+import BookCard from "../components/SearchCard"
 import DataAreaContext from "../utils/DataAreaContext";
 
 function Search() {
   // Setting our component's initial state
   // const [savedBooks, setBooks] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
+  // const [searchValue, setSearchValue] = useState("");
   const [developerState, setDeveloperState] = useState({
+    searchValue: "",
     books: [],
-    results: []
+    savedBooks: []
   });
 
   function searchBooks(query) {
@@ -32,13 +33,17 @@ function Search() {
 
   function handleInputChange(event) {
     event.preventDefault();
-    setSearchValue(event.target.value);
+    // setSearchValue(event.target.value);
+    setDeveloperState({ 
+      ...developerState,
+      searchValue: event.target.value
+    })
   };
 
   // When the form is submitted, search the Google Books API for `this.state.search`
   function handleFormSubmit(event) {
     event.preventDefault();
-    searchBooks(searchValue);
+    searchBooks(developerState.searchValue);
   };
 
   return (
