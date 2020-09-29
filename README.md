@@ -1,10 +1,6 @@
-# googlebooks-reactsearch
-
-<div align="center">
 ![build](https://img.shields.io/travis/darren-behan/googlebooks-reactsearch) ![Code Count](https://img.shields.io/github/languages/count/darren-behan/googlebooks-reactsearch) ![Main Code Base](https://img.shields.io/github/languages/top/darren-behan/googlebooks-reactsearch) ![License Badge](https://img.shields.io/badge/license-mit-blue) ![Version Badge](https://img.shields.io/badge/version-1.0-red) ![Last Commit](https://img.shields.io/github/last-commit/darren-behan/googlebooks-reactsearch) ![Open Issues](https://img.shields.io/github/issues-raw/darren-behan/googlebooks-reactsearch) ![Repo Size](https://img.shields.io/github/repo-size/darren-behan/googlebooks-reactsearch)
-</div>
 
-<h1 align="center"># Welcome to my Google Books Search Application 👋</h1>
+<h1 align="center">Welcome to my Google Books Search Application 👋</h1>
 
 ## Description
 
