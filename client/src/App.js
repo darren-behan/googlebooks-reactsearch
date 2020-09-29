@@ -32,6 +32,13 @@ function App() {
       .catch(err => console.log(err));
   };
 
+  // Deletes a book from the database with a given id, then reloads books from the db
+  function deleteBook(id) {
+    API.deleteBook(id)
+      .then(res => loadBooks())
+      .catch(err => console.log(err));
+  }
+
   function searchBooks(query) {
     console.log(query)
     API.search(query)
@@ -89,7 +96,7 @@ function App() {
 
   return (
     <DataAreaContext.Provider
-    value={{ developerState, handleInputChange, handleFormSubmit, handleSavedButton }}
+    value={{ developerState, handleInputChange, handleFormSubmit, handleSavedButton, deleteBook }}
     >
       <Router>
         <div>

@@ -12,7 +12,7 @@ function CardComponent() {
       <Card.Body>
         {context.developerState.savedBooks.map(book => {
           return (  
-            <li style={{ borderRadius: "10px", marginBottom: "5px" }} className="list-group-item" key={book.id}>
+            <li style={{ borderRadius: "10px", marginBottom: "5px" }} className="list-group-item" key={book._id}>
               <Row className="SearchResult row" id={book.id}>
                 <Col size="2" className="bookImage">
                     <img src={book.image} alt={book.title} />
@@ -32,7 +32,7 @@ function CardComponent() {
               </Row>
               <br></br>
               <Row className="buttonDiv ">
-                <Button className="saveBook btn btn-primary" id={book.id}>
+                <Button className="saveBook btn btn-primary" id={book.id} onClick={() => context.deleteBook(book._id)}>
                   Delete Book
                 </Button>
                 <a href={book.link} target="_blank">
